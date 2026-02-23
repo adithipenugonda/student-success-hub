@@ -12,10 +12,12 @@ import {
   FileSpreadsheet,
   FileQuestion,
   Brain,
-  Sparkles
+  Sparkles,
+  LogOut
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { useAuth } from '@/contexts/AuthContext';
 
 const studentNavItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/' },
