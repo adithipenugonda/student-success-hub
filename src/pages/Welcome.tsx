@@ -23,10 +23,7 @@ export default function Welcome() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <Link to="/auth">
-            <Button variant="outline" size="sm">Log In</Button>
-          </Link>
-          <Link to="/auth?tab=signup">
-            <Button size="sm" className="btn-primary-gradient">Sign Up</Button>
+            <Button size="sm" className="btn-primary-gradient">Sign In with Google</Button>
           </Link>
         </div>
       </header>
