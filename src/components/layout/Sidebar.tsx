@@ -12,10 +12,12 @@ import {
   FileSpreadsheet,
   FileQuestion,
   Brain,
-  Sparkles
+  Sparkles,
+  LogOut
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { useAuth } from '@/contexts/AuthContext';
 
 const studentNavItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/' },
@@ -37,6 +39,7 @@ const aiToolsNavItems = [
 
 export function Sidebar() {
   const location = useLocation();
+  const { signOut } = useAuth();
 
   return (
     <aside className="fixed left-0 top-0 z-40 h-screen w-64 bg-sidebar border-r border-sidebar-border">
@@ -107,7 +110,14 @@ export function Sidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-sidebar-border">
+      <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-sidebar-border space-y-2">
+        <button
+          onClick={signOut}
+          className="flex items-center gap-3 w-full px-4 py-2.5 rounded-lg text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-200"
+        >
+          <LogOut className="h-5 w-5" />
+          Log Out
+        </button>
         <p className="text-xs text-center text-muted-foreground">
           Empowering Rural Education
         </p>
